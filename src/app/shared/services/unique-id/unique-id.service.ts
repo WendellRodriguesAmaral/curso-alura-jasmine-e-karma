@@ -7,10 +7,12 @@ export class UniqueIdService{
 
     private numberOfGeneratedIds =0;
 
+    private validId = /^[A-Za-z]+[\w\-\:\.]*$/;
+
     public generateUniqueIdWithPrefix(prefix:string):string{
 
-        if(!prefix){
-            throw Error("Prefix can not be empty"); // se não passar o prefixo como parametro, lança um error.
+        if(!prefix || !this.validId.test(prefix)){ //se o prefix for vazio ou nulo e se o prefix NÃO obedecer ao regex...
+            throw Error("Prefix can not be empty"); 
         }
 
         const uniqueId = this.generateUniqueId();
