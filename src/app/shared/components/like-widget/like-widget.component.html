@@ -1,0 +1,21 @@
+<div class="like-widget-container" (click)="like()" (keyup.enter)="like()">
+    <!-- role buttons (acessibilidade) informa ao leitor de tela que funciona como botao-->
+    <fa-icon 
+    aria-label="icone de curtida"
+    role="button"
+    [attr.aria.discribedby]="id"
+    tabindex="0"  
+    size="1x"
+    [icon]="fonts.faThumbsUp"
+     ></fa-icon>
+
+    <span 
+    [attr.id]='id'
+    [attr.aria.label]="likes + ': people liked'" 
+    aria-live="true"
+    aria-atomic="true"
+    class="like-counter">
+        {{likes}}
+    </span>
+    <!-- os attr acima são atributos de acessibilidade -->
+</div>

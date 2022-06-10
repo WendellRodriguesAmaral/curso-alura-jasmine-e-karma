@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 import {v4 as uuidv4} from 'uuid';
 
-@Injectable() //sem escopo para ser adicionado no provider depois
+@Injectable() //sem escopo para ser adicionado no provider 
 export class UniqueIdService{
 
     private numberOfGeneratedIds =0;
